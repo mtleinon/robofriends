@@ -1,10 +1,12 @@
 import React from 'react';
-import {Card} from "./Card";
+import { Card } from "./Card";
 
 export const CardList = ({robots}) =>
     <div>
         {
-            robots.map((r) =>
-                <Card key={r.id} id={r.id} name={r.name} email={r.email}/>)
+            robots.map((robot) =>
+                    <Card key={robot.id} id={robot.id}
+                    name={robot.name} email={robot.email}/>
+            )
         }
     </div>;
