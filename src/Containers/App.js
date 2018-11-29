@@ -7,6 +7,7 @@ import { ErrorBoundary } from "./ErrorBoundary";
 import './App.css';
 
 import {requestRobots, setSearchField} from "../Components/actions";
+import {Header} from "./Header";
 
 const mapStateToProps = (state) => {
     return {
@@ -40,14 +41,14 @@ class App extends Component {
             const filteredRobots = robots.filter(robot =>
                     robot.name.toLowerCase().includes(searchField.toLowerCase()));
             return <div className='tc'>
-                        <h1 className='f1'>Robot friends</h1>
-                        <SearchBox searchChange={onSearchChange}/>
-                        <Scroll>
-                            <ErrorBoundary>
-                                <CardList robots={filteredRobots}/>
-                            </ErrorBoundary>
-                        </Scroll>
-                    </div>;
+                <Header/>
+                <SearchBox searchChange={onSearchChange}/>
+                <Scroll>
+                    <ErrorBoundary>
+                        <CardList robots={filteredRobots}/>
+                    </ErrorBoundary>
+                </Scroll>
+            </div>;
         }
     }
 }
