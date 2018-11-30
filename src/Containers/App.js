@@ -36,7 +36,7 @@ class App extends Component {
         const { searchField, onSearchChange, robots, isPending } = this.props;
 
         if (isPending || robots.length === 0) {
-            return(<div>
+            return(<div className='tc'>
                         <Header/>
                         <h2>Loading robots ...</h2>
                    </div>);
