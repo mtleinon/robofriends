@@ -1,7 +1,7 @@
 import {PureComponent} from "react";
 import React from "react";
 
-export class CounterButton extends PureComponent {
+class CounterButton extends PureComponent {
     constructor() {
         super();
         this.state = {
@@ -14,12 +14,14 @@ export class CounterButton extends PureComponent {
     };
 
     render() {
-        console.log('CounterButton');
         return (
-            <button onClick={this.updateCount}
-                    color={this.props.color}>
+            <button
+                id='counter'
+                onClick={this.updateCount}
+                color={this.props.color}>
                 {this.state.count}
             </button>
         )
     }
 }
+export default CounterButton;
